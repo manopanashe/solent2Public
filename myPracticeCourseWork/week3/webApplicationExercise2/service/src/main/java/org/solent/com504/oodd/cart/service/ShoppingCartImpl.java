@@ -41,10 +41,11 @@ public class ShoppingCartImpl implements ShoppingCart {
 
     @Override
     public double getTotal() {
-        double total = 0;
+      
+        double total = 0;    
          for (ShoppingItem shoppingItem : itemMap.values()){
             total = total + shoppingItem.getQuantity();
-            
+         
         }
         return total;
     }

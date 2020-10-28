@@ -52,15 +52,18 @@ public class ShoppingServiceImpl implements ShoppingService {
 
     @Override
     public ShoppingItem getNewItemByName(String name) {
+   
         ShoppingItem templateItem = itemMap.get(name);
         ShoppingItem item = new ShoppingItem();
         item.setName(name);
         item.setPrice(templateItem.getPrice());
-        item.setQuantity(0);
+        item.setQuantity(1);
         item.setUuid(UUID.randomUUID().toString());
         return item;
     }
     
+ 
+     
    
 
 }
