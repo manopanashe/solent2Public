@@ -21,7 +21,7 @@ public class ShoppingCartImpl implements ShoppingCart {
 
     @Override
     public List<ShoppingItem> getShoppingCartItems() {
-         List<ShoppingItem> itemlist = new ArrayList();
+        List<ShoppingItem> itemlist = new ArrayList();
         for (String itemUUID : itemMap.keySet()) {
             ShoppingItem shoppingCartItem = itemMap.get(itemUUID);
             itemlist.add(shoppingCartItem);
@@ -31,7 +31,10 @@ public class ShoppingCartImpl implements ShoppingCart {
 
     @Override
     public void addItemToCart(ShoppingItem shoppingItem) {
-       boolean itemExists = false;
+        // itemMap.put(shoppingItem.getUuid(), shoppingItem);
+        
+        // ANSWER
+        boolean itemExists = false;
         for (String itemUUID : itemMap.keySet()) {
             ShoppingItem shoppingCartItem = itemMap.get(itemUUID);
             if (shoppingCartItem.getName().equals(shoppingItem.getName())){
@@ -54,11 +57,11 @@ public class ShoppingCartImpl implements ShoppingCart {
         itemMap.remove(itemUuid);
     }
 
-  
-
     @Override
     public double getTotal() {
-       double total = 0;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // ANSWER
+        double total = 0;
 
         for (String itemUUID : itemMap.keySet()) {
             ShoppingItem shoppingCartItem = itemMap.get(itemUUID);
@@ -66,6 +69,7 @@ public class ShoppingCartImpl implements ShoppingCart {
         }
 
         return total;
+
     }
 
 }

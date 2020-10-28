@@ -31,8 +31,7 @@ public class ExampleCollectionsTest {
     // examples
     // Arrays are very primitive types in java
     String[] thisIsAnArray = new String[]{"hello", "world"};
-    Animal[] animals;
-
+    
     // lists are part of he collections framework
     // this list just contains objects
     List unTypedlistFromAnArray = Arrays.asList(thisIsAnArray);
@@ -61,10 +60,7 @@ public class ExampleCollectionsTest {
 
     // typed hash map
     Map<String, Animal> typedExampleHashMap = new HashMap<String, Animal>();
- public void examples(){
- String[] example1 = new String[]{"hello", "world"};
 
- }
     @Test
     public void unTypedListTest() {
         System.out.println("\n start of unTypedListTest()");
