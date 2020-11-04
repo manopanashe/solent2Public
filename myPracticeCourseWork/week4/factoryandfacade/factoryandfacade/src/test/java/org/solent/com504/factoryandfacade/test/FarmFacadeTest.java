@@ -22,35 +22,27 @@ import org.solent.com504.factoryandfacade.model.FarmFacade;
 public class FarmFacadeTest {
 
     FarmFacade farmFacade = null;
-    
+
     List<String> animals = null;
 
     @Test
     public void FarmFacadeTest() {
-      FarmFacade farmFacade = AnimalObjectFactory.getFarmFacade();
-      assertNotNull(farmFacade);  
-      
-    }
-     
-    @Test 
-    public void addDogTest(){
-        Animal dog1 = new Dog();      
-        Animal dog2 = new Dog();
-        animals.add("Max");
-         System.out.println("size of map:" + animals.size());
-    }
-    
-    @Test 
-    public void addCatTest(){
-     Animal cat1 = new Cat();
-        Animal cat2 = new Cat();
-    }
-    
-    @Test
-    public void addCowTest(){
-    Animal cow1 = new Cow();
-    Animal cow2 = new Cow();
-    
+        FarmFacade farmFacade = AnimalObjectFactory.getFarmFacade();
+        assertNotNull(farmFacade);
+         List<Animal> animals = farmFacade.getAllAnimals();
+        assertTrue(animals.isEmpty());
+        //testDog
+        String dogName = "Max";
+        farmFacade.addDog(dogName);
+        animals = farmFacade.getAllAnimals();
+        assertEquals(1, animals.size());
+        assertEquals(dogName, animals.get(0).getName());
+        
+        
+   
+        
+        System.out.println("size of map:" + animals.size());
+
     }
 
 }

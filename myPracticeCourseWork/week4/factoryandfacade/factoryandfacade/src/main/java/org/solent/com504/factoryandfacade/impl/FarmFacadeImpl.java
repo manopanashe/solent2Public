@@ -21,34 +21,32 @@ import org.solent.com504.factoryandfacade.model.FarmFacade;
  * @author manop
  */
 public class FarmFacadeImpl implements FarmFacade {
-    Map<String, Animal> animals = new HashMap<String, Animal>();
+   private List<Animal> animals = new ArrayList<Animal>();
     
 
     @Override
     public List<Animal> getAllAnimals() {
-         List<Animal> animalList = new ArrayList<Animal>();
-         for(Animal a : animalList){
-            //do something with animal here
-          animalList.add(a);
-         }
-     
-         return animalList;
+         return new ArrayList<Animal>(animals);
     }
 
     @Override
     public void addDog(String name) {  
-       animals.put("Max",new Dog());
-      
+      Animal animal = AnimalObjectFactory.createDog();
+      animal.setName("Max");
+      animals.add(animal);
     }
 
     @Override
     public void addCat(String name) {
-              animals.put("Felix",new Cat());
-
+ Animal animal = AnimalObjectFactory.createDog();          
+ animal.setName("felix");
+ animals.add(animal);
     }
 
     @Override
     public void addCow(String name) {
-        animals.put("Mary",new Cow());
+         Animal animal = AnimalObjectFactory.createDog();
+        animal.setName("Mary");
+        animals.add(animal);
     }
 }
