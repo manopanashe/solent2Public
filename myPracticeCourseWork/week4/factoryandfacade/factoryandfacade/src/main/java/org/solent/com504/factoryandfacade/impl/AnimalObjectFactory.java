@@ -6,26 +6,26 @@ import org.solent.com504.factoryandfacade.model.Cow;
 import org.solent.com504.factoryandfacade.model.Dog;
 import org.solent.com504.factoryandfacade.model.FarmFacade;
 
-public class AnimalObjectFactory{
+public class AnimalObjectFactory {
+    private static FarmFacade farmFacade = new FarmFacadeImpl();
  
     public static Animal createCat() {
-        Cat cat = (Cat) new Cat();
-        return cat;
+   
+        return new Cat();
     }
 
     public static Animal createDog() {
-        Dog dog = (Dog) new Dog();
-        return dog;
+       
+        return new Dog();
     }
 
     public static Animal createCow() {
-        Cow cow = (Cow) new Cow();
-        return cow;
+        
+        return new Cow();
     }
     
-
-    public static FarmFacade getFarmFacade() {
-        FarmFacade farmFacade = (FarmFacade) new FarmFacadeImpl();
-        return farmFacade;
-    }
+   public static FarmFacade getFarmFacade(){
+         return farmFacade;
+  
+   }
 }

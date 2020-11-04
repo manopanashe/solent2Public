@@ -9,7 +9,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.solent.com504.factoryandfacade.model.Animal;
+import org.solent.com504.factoryandfacade.model.Cat;
+import org.solent.com504.factoryandfacade.model.Cow;
+import org.solent.com504.factoryandfacade.model.Dog;
 import org.solent.com504.factoryandfacade.model.FarmFacade;
 
 /**
@@ -17,33 +21,34 @@ import org.solent.com504.factoryandfacade.model.FarmFacade;
  * @author manop
  */
 public class FarmFacadeImpl implements FarmFacade {
-    List<Animal> animals = new ArrayList<Animal>();
+    Map<String, Animal> animals = new HashMap<String, Animal>();
     
 
     @Override
     public List<Animal> getAllAnimals() {
+         List<Animal> animalList = new ArrayList<Animal>();
+         for(Animal a : animalList){
+            //do something with animal here
+          animalList.add(a);
+         }
      
-         return animals;
+         return animalList;
     }
 
     @Override
-    public void addDog(String name) {
-        
-        Animal dog = null;
-        
-       animals.add(dog);
-       dog.setName("felio");
+    public void addDog(String name) {  
+       animals.put("Max",new Dog());
+      
     }
 
     @Override
     public void addCat(String name) {
-        Animal cat = null;
-              animals.add(cat);
+              animals.put("Felix",new Cat());
 
     }
 
     @Override
     public void addCow(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        animals.put("Mary",new Cow());
     }
 }
