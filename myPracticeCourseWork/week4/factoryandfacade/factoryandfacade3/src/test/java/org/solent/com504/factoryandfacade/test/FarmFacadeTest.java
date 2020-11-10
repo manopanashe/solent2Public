@@ -14,6 +14,7 @@ import org.solent.com504.factoryandfacade.model.Animal;
 import org.solent.com504.factoryandfacade.model.Cat;
 import org.solent.com504.factoryandfacade.model.Cow;
 import org.solent.com504.factoryandfacade.model.Dog;
+import org.solent.com504.factoryandfacade.model.Duck;
 import org.solent.com504.factoryandfacade.model.FarmFacade;
 import org.solent.com504.factoryandfacade.model.FarmObjectFactory;
 
@@ -45,11 +46,12 @@ public class FarmFacadeTest {
 
         supportedAnimalTypes = farmObjectFactory.getSupportedAnimalTypes();
         assertNotNull(supportedAnimalTypes);
-        assertEquals(3, supportedAnimalTypes.size());
+        assertEquals(4, supportedAnimalTypes.size());
 
         assertTrue(supportedAnimalTypes.contains(Cat.ANIMAL_TYPE));
         assertTrue(supportedAnimalTypes.contains(Dog.ANIMAL_TYPE));
         assertTrue(supportedAnimalTypes.contains(Cow.ANIMAL_TYPE));
+        assertTrue(supportedAnimalTypes.contains(Duck.ANIMAL_TYPE));
 
         System.out.println("testing supported animal types:");
         for (String animalType : supportedAnimalTypes) {

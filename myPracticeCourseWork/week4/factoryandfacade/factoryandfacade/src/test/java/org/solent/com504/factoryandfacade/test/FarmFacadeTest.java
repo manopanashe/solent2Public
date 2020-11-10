@@ -40,9 +40,26 @@ public class FarmFacadeTest {
         
         
    
-        
+        System.out.println("name of dog" + dogName);
         System.out.println("size of map:" + animals.size());
 
+    }
+    
+    @Test
+    public void addCatTest(){
+    FarmFacade farmFacade = AnimalObjectFactory.getFarmFacade();
+        assertNotNull(farmFacade);
+         List<Animal> animals = farmFacade.getAllAnimals();
+        assertTrue(animals.isEmpty());
+        
+        String catName = "felix";
+        farmFacade.addCat(catName);
+        animals = farmFacade.getAllAnimals();
+        assertEquals(1,animals.size());
+        assertEquals(catName, animals.get(0).getName());
+        
+         System.out.println("name of dog" + catName);
+        System.out.println("size of map:" + animals.size());
     }
 
 }
