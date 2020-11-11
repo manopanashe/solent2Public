@@ -46,27 +46,17 @@ public class FarmFacadeImpl implements FarmFacade {
         if (name == null) {
             throw new IllegalArgumentException("name cannot be null");
         }
+       
         Animal animalTemplate = new Animal();
         animalTemplate.setName(name);
+       
         List<Animal> animals = animalDao.retrieve(animalTemplate);
         if (animals.isEmpty()) {
             return null;
         }
         return animals.get(0);
     }
-     @Override
-    public Animal getFood(String animalFood) {
-        if (animalFood == null) {
-            throw new IllegalArgumentException("name cannot be null");
-        }
-        Animal animalTemplate = new Animal();
-        animalTemplate.setFood(animalFood);
-        List<Animal> animals = animalDao.retrieve(animalTemplate);
-        if (animals.isEmpty()) {
-            return null;
-        }
-        return animals.get(0);
-    }
+  
 
 
     @Override
@@ -119,7 +109,12 @@ public class FarmFacadeImpl implements FarmFacade {
         return animal;
     }
 
+    @Override
+    public Animal getFood(String animalFood) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
+    
   
   
     }

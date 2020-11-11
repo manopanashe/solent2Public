@@ -58,7 +58,7 @@ public class FarmRestClientImpl implements FarmFacade {
     }
 
     @Override
-    public Animal addAnimal(String animalType, String animalName, String animalFood) {
+    public Animal addAnimal(String animalType, String animalName) {
         LOG.debug("client addAnimal Called animalType=" + animalType + " animalName=" + animalName);
 
         Client client = ClientBuilder.newClient(new ClientConfig().register(LoggingFilter.class));
@@ -135,5 +135,14 @@ public class FarmRestClientImpl implements FarmFacade {
     public Animal getFood(String animalFood) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Animal addAnimal(String animalType, String name, String animalFood) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+
+    
 
 }

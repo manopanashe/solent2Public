@@ -51,4 +51,7 @@ public interface FarmFacade {
      * @return 
      */
     public List<String> getSupportedAnimalTypes();
+
+    public Animal addAnimal(String animalType, String name);
+
 }
